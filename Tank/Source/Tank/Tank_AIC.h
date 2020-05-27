@@ -13,5 +13,14 @@ UCLASS()
 class TANK_API ATank_AIC : public AAIController
 {
 	GENERATED_BODY()
+public:
+
+	class ATankC* GetTank() const;
+
+	class ATankC* GetPlayerTank() const;
+
+	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override;
 	
 };
