@@ -37,6 +37,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Fuoco")
 	void Spara();
 
+	UPROPERTY(VisibleAnyWhere, CAtegory = "Setup")
+	float ReloadTime;
+	float Reload;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

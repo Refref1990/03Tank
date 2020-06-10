@@ -13,7 +13,13 @@ UCLASS()
 class TANK_API ATank_AIC : public AAIController
 {
 	GENERATED_BODY()
+
+		float Timer;
+
+
 public:
+
+	ATank_AIC();
 
 	class ATankC* GetTank() const;
 
