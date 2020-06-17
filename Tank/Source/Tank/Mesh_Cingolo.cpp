@@ -14,7 +14,7 @@ void UMesh_Cingolo::RichiestaMovimento(float Movimento)
 {
 	if (Movimento != 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("input = %f"), Movimento);
+		//UE_LOG(LogTemp, Warning, TEXT("input = %f"), Movimento);
 		FVector ForzaApplicata = GetForwardVector()* ForzaMaxCingolo*Movimento;
 		FVector ForzaLocazione = GetComponentLocation();
 		UPrimitiveComponent*TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());

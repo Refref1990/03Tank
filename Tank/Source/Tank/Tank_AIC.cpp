@@ -16,7 +16,7 @@ ATankC * ATank_AIC::GetPlayerTank() const
 ATank_AIC::ATank_AIC()
 {
 	Timer = FMath::FRandRange(3.f, 6.f);
-
+	RaggioMax = 100000;
 }
 
 ATankC * ATank_AIC::GetTank() const
@@ -26,6 +26,7 @@ ATankC * ATank_AIC::GetTank() const
 
 void ATank_AIC::BeginPlay()
 {
+	Super::BeginPlay();
 	auto CarroControllato = GetTank();
 	auto CarroNemico = GetPlayerTank();
 
@@ -45,10 +46,12 @@ void ATank_AIC::Tick(float DeltaTime)
 {
 
 	Super::Tick(DeltaTime);
-	if (GetPlayerTank()&& GetTank())
+
+	auto bersaglio = GetPlayerTank();
+		if (bersaglio&& GetTank())
 	{
 
-		GetTank()->AimAt(GetPlayerTank()->GetActorLocation());
+		GetTank()->AimAt(bersaglio->GetActorLocation());
 
 		if (Timer > 0) Timer -= DeltaTime;
 		else
@@ -59,7 +62,7 @@ void ATank_AIC::Tick(float DeltaTime)
 
 		}
 
-
+		MoveToActor(bersaglio, RaggioMax);
 
 			
 	}

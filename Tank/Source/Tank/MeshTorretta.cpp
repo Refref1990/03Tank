@@ -18,7 +18,7 @@ UMeshTorretta::UMeshTorretta()
 void UMeshTorretta::Eleva(float velrelativita)
 {
 
-	UE_LOG(LogTemp, Warning, TEXT("rotazione verso %f"), velrelativita);
+	//UE_LOG(LogTemp, Warning, TEXT("rotazione verso %f"), velrelativita);
 	velrelativita = FMath::Clamp<float>(velrelativita, -1, 1);
 	
 	float CambioLevatura = velrelativita * RotMaxSec * GetWorld()->DeltaTimeSeconds;
@@ -35,7 +35,7 @@ void UMeshTorretta::Eleva(float velrelativita)
 void UMeshTorretta::Ruota(float velrelativita)
 {
 
-	UE_LOG(LogTemp, Warning, TEXT("rotazione verso %f"), velrelativita);
+	//UE_LOG(LogTemp, Warning, TEXT("rotazione verso %f"), velrelativita);
 	velrelativita = FMath::Clamp<float>(velrelativita, -1, 1);
 
 	float CambioRotazione = velrelativita * RotHMaxSec * GetWorld()->DeltaTimeSeconds;

@@ -21,6 +21,7 @@ public:
 
 	ATank_AIC();
 
+
 	class ATankC* GetTank() const;
 
 	class ATankC* GetPlayerTank() const;
@@ -28,5 +29,7 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnyWhere, Category = "AI")
+	float RaggioMax;
 	
 };
